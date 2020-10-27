@@ -62,11 +62,11 @@ var timer=180
 var questionElement = document.getElementById("Q1"); 
 var btnOne =  document.getElementById("A1"); 
 var btnTwo =  document.getElementById("A2"); 
-var btnThree =  document.getElementById("A3"); 
+var btnThree = document.getElementById("A3"); 
 var btnFour =  document.getElementById("A4"); 
 
 
-// create timer set score score board 
+// i wasn't sure how to create a timer 
 function timer(){
     console.log('timer started')
 }
@@ -95,7 +95,8 @@ function checkAnswer(){
     loadNextQuestion(currentQuestionIndex)
     // set and check interval for timer
 }
-
+// my questions were loading fine at one point but i can't get them to load and I'm not sure why...
+// 
 function loadNextQuestion(currentQuestionIndex){
     console.log(questionsList[currentQuestionIndex].question)
     console.log(document.getElementById("Q1"))
@@ -116,15 +117,6 @@ function loadNextQuestion(currentQuestionIndex){
 function saveData(){
 }
 
-//Button for initGame
-// document.querySelector('#start').addEventListener('click', initGame)
-
-//document.querySelector('#quiz').addEventListener('click', function(e){
-    //if(!e.target.classlist.contains('option')){
-     //   return
-//    }
-//})
-//Addevent listiner for the choice buttons 
 btnOne.addEventListener("click",checkAnswer)
 
 loadNextQuestion(currentQuestionIndex)
