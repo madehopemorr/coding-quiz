@@ -9,7 +9,7 @@ function printHighScores() {
         var liElement = document.createElement("li")
         liElement.textContent = element.initials + " - " + element.score
         document.getElementById("scorelist").appendChild(liElement)
-        });
+       });
         
     //}
 } 
