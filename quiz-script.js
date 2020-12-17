@@ -67,7 +67,7 @@ var questionCount = document.getElementById("questionCount");
 var quizDiv = document.getElementById("QandA");
 var submitButton = document.getElementById("submitBtn");
 var startButton = document.getElementById("startbutton");
-var time = 30; //your time in seconds here
+var time = 120; //your time in seconds here
 var display = document.getElementById('myTimerDisplay');
 var timerInterval;
 ///// DECALRING FUNCTIONS 
@@ -150,17 +150,22 @@ function quizScoreBoard(currentQuestionIndex) {
 }
 function saveData() {
   console.log("Player Score and Initials", playerScore , " - ", document.getElementById("initials").value)
+  // get saved scores from localstroage, or if not any, set to empty array
+  var previouScores = JSON.parse(window.localStorage.getItem("allScores")) || [];
   //Set Data in localStorage 
   var finalScore = { 
     score: playerScore, 
     initials: document.getElementById("initials").value
   }
   console.log(finalScore)
-  //Write code to store in localstoarge using 
-  localStorage.setItem("allScores", JSON.stringify(finalScore));
+  //save to localstorage
+  previouScores.push(finalScore);
+  //write code to store in localstorage using
+  localStorage.setItem("allScores", JSON.stringify(previouScores));
   //Navigate to next page 
   window.location.href="highscore.html"
 }
+
 // function showResults() {
 //   var answerContainers = quizContainer.querySelectorAll('.answers');
 //   let numCorrect = 0
