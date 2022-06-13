@@ -1,5 +1,6 @@
 # CODING QUIZ
 This project is a timed, coding-quiz application that runs in the browser with multiple choice questions and a results page. 
+Link to site: https://madehopemorr.github.io/coding-quiz/
 
 ## Technologies
 - HTML
